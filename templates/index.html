@@ -5,14 +5,43 @@
     <title>WTForms</title>
   </head>
   <body>
-    <form action="/" method="POST">
-      <dl>
-        {{ form.csrf_token }}
-        {{ render_field(form.username) }}
-        {{ render_field(form.password) }}
-        <input type="submit" value="Login">
-      </dl>
-    </form>
+    <div>
+        <h1>PERFECT NUMBERS</h1>
+        <p>This is a basic Flask App to illustrate Aliquot Sums and Perfect Numbers</p>
+    </div>
+    <div>
+      <form action="/" method="POST">
+        <dl>
+          {{ form1.csrf_token }}
+          {{ render_field(form1.inputNumber) }}
+          <input type="submit" value="check">
+        </dl>
+      </form>
+    </div>
+    <div>
+      {{ num }} is {{ classify }}
+    </div>
+
+    <div></div>
+
+    <div>
+      <form action="/aliRange" method="POST">
+        <dl>
+          <p>Input a start number and an end number to return a list of numbers within that range</p>
+          {{ form2.csrf_token }}
+          {{ render_field(form2.aliquot) }}
+          {{ render_field(form2.startNumber) }}
+          {{ render_field(form2.endNumber) }}
+          <input type="submit" value="see numbers within range">
+        </dl>
+      </form>
+    </div>
+    <div>
+      The {{ aliquot }} numbers between {{ startNumber }} and {{ endNumber }} are:
+    </div>
+    <div>
+      {{ listInRange }}
+    </div>
 
   </body>
 </html>
